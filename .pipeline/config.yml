@@ -8,32 +8,32 @@
 # This is a YAML-file. YAML is an indentation-sensitive file format. Please make sure to properly indent changes to it.
 ###
 
-
-
-### General project setup
 general:
-  inferBuildTool: true
+  gitSshKeyCredentialsId: GitHub_Test_SSH
 
-### Step-specific configuration
+##Step-specific configuration
 steps:
-  artifactPrepareVersion:
-    versioningType: cloud_noTag
+  cloudFoundryDeploy:
+    deployTool: 'cf_native'
+    cloudFoundry:
+      org: 'a004cb52trial'
+      space: 'dev'
+      credentialsId: 'CF_CREDENTIAL'
 
-### Stage-specific configuration
+##Stage-specific configuration
 stages:
   'Confirm':
     manualConfirmation: false
 
-#  Integration:
-#    credentials:
-#      - alias: 'mySystemAlias'
-#        credentialId: 'mySystemCredentialsId'
+  Release:
+   cfTargets:
+     - org: 'a004cb52trial'
+       space: 'dev'
+       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+       appName: 'abapbuildcld'
+       manifest: 'manifest.yml'
+       credentialsId: 'serkan.aksut78@gmail.com'
 
-#  Release:
-#    cfTargets:
-#      - org: 'myOrg'
-#        space: 'mySpace'
-#        apiEndpoint: 'https://'
-#        appName: 'myAppName'
-#        manifest: 'manifest.yml'
-#        credentialsId: 'myDeploymentCredentialsId'
+
+
+
