@@ -15,4 +15,7 @@ node() {
         checkout scm
         setupCommonPipelineEnvironment script:this
     }
+	stage('deploy') {
+		cloudFoundryDeploy script: this
+	}
 }
