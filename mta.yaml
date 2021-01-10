@@ -1,9 +1,0 @@
-_schema-version: 2.1.0
-ID: com.zorlu.cloud.sdk.abap.abapbuildcld
-version: 1.0.0-SNAPSHOT
-description: A Hello World sample application
-provider: SAP Sample generator
-modules:
-  - name: cloud.sdk.abap.abapbuildcld
-    type: nodejs
-    path: .
