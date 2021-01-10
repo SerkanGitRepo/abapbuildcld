@@ -1,13 +1,19 @@
 general:
-  inferBuildTool: true
+  buildTool: 'mvn'
 steps:
 #  mtaBuild:
 #    buildTarget: 'CF'
   
   cloudFoundryDeploy:
-    deployTool: 'mvn'
-    deployType: 'standard'
+    deployTool: 'cf_native'
+    deployType: 'blue-green'
     cloudFoundry:
       org: 'a004cb52trial'
       space: 'dev'
       credentialsId: 'CF_IDENTITY_FOR_JENKINS'
+      apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+      appName: 'abapbuildcld'
+      credentialsId: 'CF_IDENTITY_FOR_JENKINS'
+      org: 'a004cb52trial'
+      space: 'dev'
+      verbose: true
