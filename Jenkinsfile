@@ -22,7 +22,9 @@ pipeline {
 	}
 	stages {
 		stage('git') {
-			git credentialsId: 'Git_Serkan_Repo', url: 'https://github.com/SerkanGitRepo/abapbuildcld.git'
+			steps{
+				git credentialsId: 'Git_Serkan_Repo', url: 'https://github.com/SerkanGitRepo/abapbuildcld.git'
+			}
 		}
 		
 		stage('Build') {
