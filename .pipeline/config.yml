@@ -1,10 +1,11 @@
 general:
+  inferBuildTool: true
 steps:
-  mtaBuild:
-    buildTarget: 'CF'
+#  mtaBuild:
+#    buildTarget: 'CF'
   
   cloudFoundryDeploy:
-    deployTool: 'mtaDeployPlugin'
+    deployTool: 'mvn'
     deployType: 'standard'
     cloudFoundry:
       org: 'a004cb52trial'
