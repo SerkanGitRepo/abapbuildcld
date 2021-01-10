@@ -9,6 +9,26 @@
  * More information on getting started with Continuous Delivery can be found here: https://sap.github.io/jenkins-library/
  */
 
-@Library('piper-lib-os') _
+//@Library('piper-lib-os') _
+//
+//piperPipeline script: this
 
-piperPipeline script: this
+pipeline {
+	agent {
+		docker {
+			image 'maven'
+			args '-v /root/.m2:/root/.m2'
+		}
+	}
+	stages {
+		stage('git') {
+			git credentialsId: 'Git_Serkan_Repo', url: 'https://github.com/SerkanGitRepo/abapbuildcld.git'
+		}
+		
+		stage('Build') {
+			steps {
+				sh 'mvn clean package'
+			}
+		}
+	}
+}
