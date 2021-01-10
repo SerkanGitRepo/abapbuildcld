@@ -1,5 +1,6 @@
 general:
   buildTool: 'mvn'
+  verbose: true
 steps:
 #  mtaBuild:
 #    buildTarget: 'CF'
