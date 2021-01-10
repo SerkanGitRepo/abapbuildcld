@@ -1,5 +1,4 @@
 general:
-  buildTool: 'mvn'
   verbose: true
 steps:
   mtaBuild:
