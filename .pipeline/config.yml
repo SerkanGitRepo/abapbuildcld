@@ -9,4 +9,4 @@ steps:
     cloudFoundry:
       org: 'a004cb52trial'
       space: 'dev'
-      credentialsId: 'CF_CREDENTIAL'
+      credentialsId: 'CF_IDENTITY_FOR_JENKINS'
