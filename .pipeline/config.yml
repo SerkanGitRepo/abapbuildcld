@@ -15,6 +15,3 @@ steps:
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
       appName: 'abapbuildcld'
       credentialsId: 'CF_IDENTITY_FOR_JENKINS'
-      org: 'a004cb52trial'
-      space: 'dev'
-      verbose: true
