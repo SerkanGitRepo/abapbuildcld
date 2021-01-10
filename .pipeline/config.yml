@@ -1,39 +1,4 @@
-###
-# This file configures the project "Piper" pipeline of your project.
-# For a reference of the configuration concept and available options, please have a look into its documentation.
-#
-# The documentation for the most recent pipeline version can always be found at:
-#    https://sap.github.io/jenkins-library/
-#
-# This is a YAML-file. YAML is an indentation-sensitive file format. Please make sure to properly indent changes to it.
-###
-
 general:
-  gitSshKeyCredentialsId: GitHub_Test_SSH
-
-##Step-specific configuration
 steps:
-  cloudFoundryDeploy:
-    deployTool: 'cf_native'
-    cloudFoundry:
-      org: 'a004cb52trial'
-      space: 'dev'
-      credentialsId: 'CF_CREDENTIAL'
-
-##Stage-specific configuration
-stages:
-  'Confirm':
-    manualConfirmation: false
-
-  Release:
-   cfTargets:
-     - org: 'a004cb52trial'
-       space: 'dev'
-       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-       appName: 'abapbuildcld'
-       manifest: 'manifest.yml'
-       credentialsId: 'serkan.aksut78@gmail.com'
-
-
-
-
+  mtaBuild:
+    buildTarget: 'CF'
