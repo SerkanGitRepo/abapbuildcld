@@ -22,6 +22,6 @@ public class HelloWorldServlet extends HttpServlet
         throws IOException
     {
         logger.info("I am running!");
-        response.getWriter().write("Hello World WWW!");
+        response.getWriter().write("Hello World WWW3!");
     }
 }
