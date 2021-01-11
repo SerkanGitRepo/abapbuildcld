@@ -23,5 +23,5 @@ public class HelloWorldServlet extends HttpServlet
     {
         logger.info("I am running!");
         response.getWriter().write("Hello World!");
-    }
+    } 
 }
