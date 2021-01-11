@@ -35,6 +35,7 @@ stages:
        failOnError: true
        gitSshKeyCredentialsId: 'Git_Serkan_Repo'
        testRepository: 'git@github.com:SerkanGitRepo/SAPGuiTesting.git'
+       gitBranch: 'main'
   Release:
     cfTargets:
       - org: 'a004cb52trial'
