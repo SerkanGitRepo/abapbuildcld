@@ -31,6 +31,7 @@ stages:
 
   Acceptance:
     seleniumExecuteTests:
+       script: this
        buildTool: 'mvn'
        failOnError: true
        gitSshKeyCredentialsId: 'Git_Serkan_Repo'
