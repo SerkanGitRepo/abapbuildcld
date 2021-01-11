@@ -43,4 +43,10 @@ stages:
        
   Release:
     multicloudDeploy:
-      cfTargets: [[org: 'a004cb52trial',space: 'dev',apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com',appName: 'abapbuildcld',manifest: 'manifest.yml',credentialsId: 'CF_IDENTITY_FOR_JENKINS']]
+      cfTargets: 
+        org: 'a004cb52trial'
+        space: 'dev'
+        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+        appName: 'abapbuildcld'
+        manifest: 'manifest.yml'
+        credentialsId: 'CF_IDENTITY_FOR_JENKINS'
