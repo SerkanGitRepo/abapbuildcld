@@ -29,19 +29,23 @@ stages:
 #      - alias: 'mySystemAlias'
 #        credentialId: 'mySystemCredentialsId'
 
-  Acceptance:
-    seleniumExecuteTests:
-       script: this
-       buildTool: 'mvn'
-       failOnError: true
-       gitSshKeyCredentialsId: 'Git_Serkan_Repo'
-       testRepository: 'git@github.com:SerkanGitRepo/SAPGuiTesting.git'
-       gitBranch: 'main'
+#  Acceptance:
+#    buildTool: 'maven'
+    
+#     seleniumExecuteTests:
+#        script: this
+#        buildTool: 'mvn'
+#        failOnError: true
+#        gitSshKeyCredentialsId: 'Git_Serkan_Repo'
+#        testRepository: 'git@github.com:SerkanGitRepo/SAPGuiTesting.git'
+#        gitBranch: 'main'
+       
   Release:
-    cfTargets:
-      - org: 'a004cb52trial'
-        space: 'dev'
-        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-        appName: 'abapbuildcld'
-        manifest: 'manifest.yml'
-        credentialsId: 'CF_IDENTITY_FOR_JENKINS'
+    multicloudDeploy:
+      cfTargets:
+        - org: 'a004cb52trial'
+          space: 'dev'
+          apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+          appName: 'abapbuildcld'
+          manifest: 'manifest.yml'
+          credentialsId: 'CF_IDENTITY_FOR_JENKINS'
