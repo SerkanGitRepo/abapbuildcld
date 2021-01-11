@@ -42,9 +42,8 @@ stages:
 #        gitBranch: 'main'
        
   Release:
-    multicloudDeploy:
-      cfTargets: 
-        org: 'a004cb52trial'
+    cfTargets: 
+      - org: 'a004cb52trial'
         space: 'dev'
         apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
         appName: 'abapbuildcld'
