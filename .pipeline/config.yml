@@ -29,8 +29,9 @@ stages:
 #      - alias: 'mySystemAlias'
 #        credentialId: 'mySystemCredentialsId'
 
-#  Acceptance:
-#    buildTool: 'maven'
+  Acceptance:
+    buildExecute:
+      buildTool: 'maven'
     
 #     seleniumExecuteTests:
 #        script: this
@@ -43,9 +44,9 @@ stages:
   Release:
     multicloudDeploy:
       cfTargets:
-        - org: 'a004cb52trial'
-          space: 'dev'
-          apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-          appName: 'abapbuildcld'
-          manifest: 'manifest.yml'
-          credentialsId: 'CF_IDENTITY_FOR_JENKINS'
+        org: 'a004cb52trial'
+        space: 'dev'
+        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+        appName: 'abapbuildcld'
+        manifest: 'manifest.yml'
+        credentialsId: 'CF_IDENTITY_FOR_JENKINS'
