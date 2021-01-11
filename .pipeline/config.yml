@@ -29,6 +29,12 @@ stages:
 #      - alias: 'mySystemAlias'
 #        credentialId: 'mySystemCredentialsId'
 
+  Acceptance:
+    seleniumExecuteTests:
+       buildTool: 'mvn'
+       failOnError: true
+       gitSshKeyCredentialsId: 'Git_Serkan_Repo'
+       testRepository: 'git@github.com:SerkanGitRepo/SAPGuiTesting.git'
   Release:
     cfTargets:
       - org: 'a004cb52trial'
