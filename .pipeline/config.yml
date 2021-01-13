@@ -29,9 +29,9 @@ stages:
 #      - alias: 'mySystemAlias'
 #        credentialId: 'mySystemCredentialsId'
 
-  Acceptance:
-    buildExecute:
-      buildTool: 'maven'
+#  Acceptance:
+#    buildExecute:
+#      buildTool: 'maven'
     
 #     seleniumExecuteTests:
 #        script: this
