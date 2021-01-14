@@ -32,6 +32,9 @@ stages:
   Acceptance:
     buildExecute:
       buildTool: 'maven'
+      gitHttpsUrl: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
+      gitBranch: 'master'
+      
     
 #     seleniumExecuteTests:
 #        script: this
