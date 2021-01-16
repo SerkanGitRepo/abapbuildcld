@@ -16,4 +16,4 @@ applications:
 #  - my-application-logs
 #  - my-xsuaa
 #  - my-destination
-#  - my-connectivity
+#  - my-connectivity piper  Begin library step of: artifactPrepareVersion  Unstash content: + ./piper version
