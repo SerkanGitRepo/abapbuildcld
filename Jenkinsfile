@@ -11,7 +11,17 @@
 
 @Library('piper-lib-os') _
 
-piperPipeline script: this
+node {
+	stage ('Build') {
+	  git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
+	  withMaven {
+		sh "mvn clean verify"
+	  } 
+	}
+  }
+	
+
+//piperPipeline script: this
 //node() {
 //	stage('Acceptance') {
 //		seleniumExecuteTests (script: this) {
