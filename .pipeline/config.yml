@@ -30,10 +30,10 @@ stages:
 #        credentialId: 'mySystemCredentialsId'
 
   Acceptance:
-#     buildExecute:
-#       buildTool: 'mvn'
-#       gitHttpsUrl: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
-#       gitBranch: 'master'
+    buildExecute:
+      buildTool: 'maven'
+      gitHttpsUrl: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
+      gitBranch: 'master'
       
     
 #     seleniumExecuteTests:
