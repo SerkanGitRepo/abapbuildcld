@@ -12,10 +12,10 @@
 @Library('piper-lib-os') _
 
 piperPipeline script: this
-node() {
-	stage('Acceptance') {
-		seleniumExecuteTests (script: this) {
-			git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
-			sh '''mvn clean verify'''
-		}
-}
+//node() {
+//	stage('Acceptance') {
+//		seleniumExecuteTests (script: this) {
+//			git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
+//			sh '''mvn clean verify'''
+//		}
+//}
