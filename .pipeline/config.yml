@@ -36,18 +36,18 @@ stages:
 #       gitBranch: 'master'
       
     
-    seleniumExecuteTests:
-       script: this
-       buildTool: 'maven'
-       failOnError: true
-       gitSshKeyCredentialsId: 'Git_Serkan_Repo'
-       testRepository: 'git@github.com:SerkanGitRepo/TestMavenPrj.git'
-       gitBranch: 'master'
-       
-       maven:
-         dockerImage: 'maven:3.6-jdk-8'
-         dockerName: 'maven'
-         dockerWorkspace: ''
+#     seleniumExecuteTests:
+#        script: this
+#        buildTool: 'maven'
+#        failOnError: true
+#        gitSshKeyCredentialsId: 'Git_Serkan_Repo'
+#        testRepository: 'git@github.com:SerkanGitRepo/TestMavenPrj.git'
+#        gitBranch: 'master'
+#        
+#        maven:
+#          dockerImage: 'maven:3.6-jdk-8'
+#          dockerName: 'maven'
+#          dockerWorkspace: ''
        
   Release:
     cfTargets: 
