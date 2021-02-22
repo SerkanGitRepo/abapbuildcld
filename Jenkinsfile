@@ -14,9 +14,7 @@
 node {
 	stage ('Build') {
 	  git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
-	  withMaven {
-		sh "mvn clean verify"
-	  } 
+	  sh "mvn clean verify" 
 	}
   }
 	
