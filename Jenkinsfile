@@ -23,7 +23,7 @@ node {
 	}
 	stage ('Acceptance') {
 		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
-		sh "mvn test"
+		sh "mvn clean verify"
 	}
   }
 	
