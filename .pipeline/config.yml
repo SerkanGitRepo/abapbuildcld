@@ -30,19 +30,24 @@ stages:
 #        credentialId: 'mySystemCredentialsId'
 
   Acceptance:
-    buildExecute:
-      buildTool: 'maven'
-      gitHttpsUrl: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
-      gitBranch: 'master'
+#     buildExecute:
+#       buildTool: 'mvn'
+#       gitHttpsUrl: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
+#       gitBranch: 'master'
       
     
-#     seleniumExecuteTests:
-#        script: this
-#        buildTool: 'mvn'
-#        failOnError: true
-#        gitSshKeyCredentialsId: 'Git_Serkan_Repo'
-#        testRepository: 'git@github.com:SerkanGitRepo/SAPGuiTesting.git'
-#        gitBranch: 'main'
+    seleniumExecuteTests:
+       script: this
+       buildTool: 'maven'
+       failOnError: true
+       gitSshKeyCredentialsId: 'Git_Serkan_Repo'
+       testRepository: 'git@github.com:SerkanGitRepo/TestMavenPrj.git'
+       gitBranch: 'master'
+       
+       maven:
+         dockerImage: 'maven:3.6-jdk-8'
+         dockerName: 'maven'
+         dockerWorkspace: ''
        
   Release:
     cfTargets: 
