@@ -19,7 +19,7 @@ node {
 	
 	stage ('Integration') {
 		git url: 'https://github.com/SerkanGitRepo/abapbuildcld/integration-tests'
-		sh "mvn clean verify" 
+		sh "mvn clean verify"
 	}
   }
 	
