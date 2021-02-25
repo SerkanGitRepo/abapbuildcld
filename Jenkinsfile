@@ -29,8 +29,8 @@ node {
 	stage ('Acceptance') {
 
 //		sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
-		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmvnprjtest:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
-////		sh 'docker cp ${c.id}:/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target/site'
+		sh 'docker run -it -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmvnprjtest:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
+		sh 'docker cp $(docker ps -aq --filter "network=host"):/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target'
 //		sh 'echo ${c.id}'
 	}
 }
