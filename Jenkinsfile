@@ -12,6 +12,8 @@
 //@Library('piper-lib-os') _
 
 node {
+	def customImage
+	
 	stage('Init'){
 		sh 'docker run -d -p 4545:4444 --name selenium-hubS selenium/hub'
 		sh 'docker run -d -P --link selenium-hubS selenium/node-chrome-debug'
@@ -20,7 +22,7 @@ node {
 	
 	stage('Build Test Image'){
 		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
-		def customImage = docker.build("testmvnprjtest:${env.BUILD_ID}")
+		customImage = docker.build("testmvnprjtest:${env.BUILD_ID}")
 	}
 	
 	stage ('Acceptance') {
