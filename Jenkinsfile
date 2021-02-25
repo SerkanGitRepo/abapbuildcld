@@ -23,7 +23,7 @@ node {
 //	}
 	stage ('Acceptance') {
 //		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
-		sh "docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify"
+		sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
 	}
   }
 	
