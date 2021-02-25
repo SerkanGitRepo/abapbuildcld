@@ -13,7 +13,7 @@
 
 node {
 	def customImage
-	
+	def buildID
 //	stage('Init'){
 //		sh 'docker run -d -p 4545:4444 --name selenium-hubS selenium/hub'
 //		sh 'docker run -d -p 5900:55000 --link selenium-hubS:hub selenium/node-chrome-debug'
@@ -26,9 +26,9 @@ node {
 	}
 	
 	stage ('Acceptance') {
-
+		
 //		sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
-		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmavenprj:$(env.BUILD_ID) mvn -f /home/TestMavenPrj/pom.xml clean verify'
+		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmavenprj:' + $(env.BUILD_ID) + ' mvn -f /home/TestMavenPrj/pom.xml clean verify'
 ////		sh 'docker cp ${c.id}:/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target/site'
 //		sh 'echo ${c.id}'
 	}
