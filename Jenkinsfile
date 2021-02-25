@@ -22,6 +22,16 @@ node {
 		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
 		def customImage = docker.build("testmvnprjtest:${env.BUILD_ID}")
 	}
+	
+	stage ('Acceptance') {
+		customImage.inside {
+			sh 'mvn -f /home/TestMavenPrj/pom.xml clean verify'
+		}
+//		sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
+//		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
+////		sh 'docker cp ${c.id}:/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target/site'
+//		sh 'echo ${c.id}'
+	}
 }
 //	stage ('Build') {
 //	  git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
@@ -32,13 +42,7 @@ node {
 //		git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
 //		sh "mvn test"
 //	}
-//	stage ('Acceptance') {
-		
-//		sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
-//		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
-////		sh 'docker cp ${c.id}:/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target/site'
-//		sh 'echo ${c.id}'
-//	}
+
 
 	
 
