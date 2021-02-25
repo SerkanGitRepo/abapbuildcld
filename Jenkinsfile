@@ -22,7 +22,8 @@ node {
 	
 	stage('Build Test Image'){
 		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
-		customImage = docker.build("testmvnprjtest:${env.BUILD_ID}")
+		//customImage = docker.build("testmvnprjtest:${env.BUILD_ID}")
+		docker.build("testmvnprjtest:1")
 	}
 	
 	stage ('Acceptance') {
