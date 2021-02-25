@@ -16,8 +16,8 @@ node {
 	
 //	stage('Init'){
 //		sh 'docker run -d -p 4545:4444 --name selenium-hubS selenium/hub'
-//		sh 'docker run -d -P --link selenium-hubS selenium/node-chrome-debug'
-//		sh 'docker run -d -P --link selenium-hubS selenium/node-firefox-debug'
+//		sh 'docker run -d -p 5900:55000 --link selenium-hubS:hub selenium/node-chrome-debug'
+//		sh 'docker run -d -p 5901:55001 --link selenium-hubS:hub selenium/node-firefox-debug'
 //	}
 	
 	stage('Build Test Image'){
