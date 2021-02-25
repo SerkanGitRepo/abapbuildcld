@@ -12,15 +12,15 @@
 //@Library('piper-lib-os') _
 
 node {
-	stage ('Build') {
-	  git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
-	  sh "mvn validate" 
-	}
-	
-	stage ('Integration') {
-		git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
-		sh "mvn test"
-	}
+//	stage ('Build') {
+//	  git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
+//	  sh "mvn validate" 
+//	}
+//	
+//	stage ('Integration') {
+//		git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
+//		sh "mvn test"
+//	}
 	stage ('Acceptance') {
 		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
 		sh "mvn clean verify"
