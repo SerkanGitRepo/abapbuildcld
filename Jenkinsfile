@@ -26,7 +26,7 @@ node {
 	}
 	
 	stage ('Acceptance') {
-		sh 'echo {BUILDNUMBER}'
+		sh 'echo ${BUILDNUMBER}'
 //		sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
 //		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmavenprj:' + ${env.BUILD_ID} + ' mvn -f /home/TestMavenPrj/pom.xml clean verify'
 ////		sh 'docker cp ${c.id}:/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target/site'
