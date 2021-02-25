@@ -20,17 +20,18 @@ node {
 //		sh 'docker run -d -p 5901:55001 --link selenium-hubS:hub selenium/node-firefox-debug'
 //	}
 	
-	stage('Build Test Image'){
-		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
-		//customImage = docker.build("testmvnprjtest:${env.BUILD_ID}")
-		docker.build("testmvnprjtest:1")
-	}
+//	stage('Build Test Image'){
+//		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
+//		//customImage = docker.build("testmvnprjtest:${env.BUILD_ID}")
+//		docker.build("testmvnprjtest:1")
+//	}
 	
 	stage ('Acceptance') {
-
-//		sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
 		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmvnprjtest:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
-		sh 'docker cp $(docker ps -aq --filter "network=host"):/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target'
+		sh 'docker cp $(docker ps -aq --filter "network=host"):/home/TestMavenPrj/target/site/serenity .'
+//		sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
+//		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmvnprjtest:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
+//		sh 'docker cp $(docker ps -aq --filter "network=host"):/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target'
 //		sh 'echo ${c.id}'
 	}
 }
