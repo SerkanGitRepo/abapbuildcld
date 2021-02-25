@@ -12,6 +12,10 @@
 //@Library('piper-lib-os') _
 
 node {
+	stage('Init'){
+		sh 'docker run -d -p 4545:4444 --name selenium-hubS selenium/hub'
+	}
+}
 //	stage ('Build') {
 //	  git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
 //	  sh "mvn validate" 
@@ -21,14 +25,14 @@ node {
 //		git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
 //		sh "mvn test"
 //	}
-	stage ('Acceptance') {
-//		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
-//      sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
-		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
-//		sh 'docker cp ${c.id}:/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target/site'
-		sh 'echo ${c.id}'
-	}
-  }
+//	stage ('Acceptance') {
+////		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
+////      sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
+//		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
+////		sh 'docker cp ${c.id}:/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target/site'
+//		sh 'echo ${c.id}'
+//	}
+
 	
 
 //piperPipeline script: this
