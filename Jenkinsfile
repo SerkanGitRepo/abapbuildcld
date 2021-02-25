@@ -14,11 +14,11 @@
 node {
 	def customImage
 	
-	stage('Init'){
-		sh 'docker run -d -p 4545:4444 --name selenium-hubS selenium/hub'
-		sh 'docker run -d -P --link selenium-hubS selenium/node-chrome-debug'
-		sh 'docker run -d -P --link selenium-hubS selenium/node-firefox-debug'
-	}
+//	stage('Init'){
+//		sh 'docker run -d -p 4545:4444 --name selenium-hubS selenium/hub'
+//		sh 'docker run -d -P --link selenium-hubS selenium/node-chrome-debug'
+//		sh 'docker run -d -P --link selenium-hubS selenium/node-firefox-debug'
+//	}
 	
 	stage('Build Test Image'){
 		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
