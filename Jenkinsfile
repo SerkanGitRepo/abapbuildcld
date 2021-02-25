@@ -17,6 +17,11 @@ node {
 		sh 'docker run -d -P --link selenium-hubS selenium/node-chrome-debug'
 		sh 'docker run -d -P --link selenium-hubS selenium/node-firefox-debug'
 	}
+	
+	stage('Build Test Image'){
+		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
+		def customImage = docker.build("testmvnprjtest:${env.BUILD_ID}")
+	}
 }
 //	stage ('Build') {
 //	  git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
@@ -28,8 +33,8 @@ node {
 //		sh "mvn test"
 //	}
 //	stage ('Acceptance') {
-////		git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
-////      sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
+		
+//		sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
 //		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
 ////		sh 'docker cp ${c.id}:/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target/site'
 //		sh 'echo ${c.id}'
