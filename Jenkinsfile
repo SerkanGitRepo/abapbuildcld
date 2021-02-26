@@ -47,9 +47,9 @@ node {
 //	}
 
 	stage('Terminate Docker Source'){
-		sh 'docker rm $(docker ps -aq --filter "ancestor=selenium/node-chrome-debug")'
-		sh 'docker rm $(docker ps -aq --filter "ancestor=selenium/node-firefox-debug")'
-		sh 'docker rm $(docker ps -aq --filter "ancestor=selenium/hub")'
+		sh 'docker rm -f $(docker ps -aq --filter "ancestor=selenium/node-chrome-debug")'
+		sh 'docker rm -f $(docker ps -aq --filter "ancestor=selenium/node-firefox-debug")'
+		sh 'docker rm -f $(docker ps -aq --filter "ancestor=selenium/hub")'
 	}
 }
 
