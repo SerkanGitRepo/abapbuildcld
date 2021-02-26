@@ -28,12 +28,13 @@ node {
 	
 	stage ('Acceptance') {
 		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmvnprjtest:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
-		sh 'docker cp $(docker ps -aq --filter "network=host"):/home/TestMavenPrj/target/site/serenity .'
+//		sh 'docker cp $(docker ps -aq --filter "network=host"):/home/TestMavenPrj/target/site/serenity .'
 		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: "/var/jenkins_home/workspace/SonPipelineSon/serenity", reportFiles: "index.html", reportName: "HTML Report", reportTitles: "Test Raporu"])
 //		sh 'docker run -d --network="host" testmavenprj:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
 //		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/TestMavenPrj --network="host" testmvnprjtest:1 mvn -f /home/TestMavenPrj/pom.xml clean verify'
 //		sh 'docker cp $(docker ps -aq --filter "network=host"):/home/TestMavenPrj/target/site/serenity /Users/serkanaks/git/TestMavenPrj/target'
 //		sh 'echo ${c.id}'
+		sh 'docker rm $(docker ps -aq --filter "network=host")'
 	}
 }
 //	stage ('Build') {
