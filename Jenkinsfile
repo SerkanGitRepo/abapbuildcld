@@ -45,7 +45,7 @@ node {
 //		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: "/var/jenkins_home/workspace/SonPipelineSon/serenity", reportFiles: "index.html", reportName: "HTML Report", reportTitles: "Test Raporu"])
 //		sh 'docker rm $(docker ps -aq --filter "network=host")'
 //	}
-	
+
 	stage('Terminate Docker Source'){
 		sh 'docker rm $(docker ps -aq --filter "ancestor=selenium/node-chrome-debug")'
 		sh 'docker rm $(docker ps -aq --filter "ancestor=selenium/node-firefox-debug")'
