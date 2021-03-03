@@ -12,8 +12,8 @@
 //@Library('piper-lib-os') _
 
 node {
-	def customImage
-	def buildID
+//	def customImage
+//	def buildID
 //	stage('Init'){
 //		sh 'docker run -d -p 4545:4444 --name selenium-hubS selenium/hub'
 //		sleep 2
@@ -41,7 +41,7 @@ node {
 	}
 	 
 	stage ('Acceptance') {
-		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/CC_BDD_TNG --network="host" test-paralel:1 mvn -f /home/CC_BDD_TNG/pom.xml clean verify'
+		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/CC_BDD_TNG --network="host" test-paralel:1 mvn -f /home/CC_BDD_TNG/pom.xml clean test -Dthreads=1'
 ////		sh 'docker cp $(docker ps -aq --filter "network=host"):/home/TestMavenPrj/target/site/serenity .'
 		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: "/var/jenkins_home/workspace/SonPipelineSon/serenity", reportFiles: "index.html", reportName: "HTML Report", reportTitles: "Test Raporu"])
 		sh 'docker rm $(docker ps -aq --filter "network=host")'
