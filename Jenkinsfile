@@ -39,7 +39,7 @@ node {
 		docker.build("test-paralel:1")
 		sh 'docker-compose -f docker-compose.yml up -d' 
 	}
-	
+	 
 	stage ('Acceptance') {
 //		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/CC_BDD_TNG --network="host" test-paralel:1 mvn -f /home/CC_BDD_TNG/pom.xml clean verify'
 ////		sh 'docker cp $(docker ps -aq --filter "network=host"):/home/TestMavenPrj/target/site/serenity .'
