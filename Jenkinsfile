@@ -37,7 +37,7 @@ node {
 		git url: 'https://github.com/SerkanGitRepo/CC_BDD_TNG.git'
 		//customImage = docker.build("testmvnprjtest:${env.BUILD_ID}")
 		docker.build("test-paralel:1")
-		//sh 'docker-compose -f docker-compose.yml up -d' 
+		sh 'docker-compose -f docker-compose.yml up -d' 
 	}
 	
 	stage ('Acceptance') {
