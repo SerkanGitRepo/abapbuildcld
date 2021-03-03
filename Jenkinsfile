@@ -40,6 +40,7 @@ node {
 	}
 	
 	stage ('Acceptance') {
+		sh 'docker-compose -f docker-compose.yml up -d'
 		sh 'docker run -i -v $(pwd):/opt/myapp -w /home/CC_BDD_TNG --network="host" test-paralel:1 mvn -f /home/CC_BDD_TNG/pom.xml clean verify'
 //		sh 'docker cp $(docker ps -aq --filter "network=host"):/home/TestMavenPrj/target/site/serenity .'
 		publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: "/var/jenkins_home/workspace/SonPipelineSon/serenity", reportFiles: "index.html", reportName: "HTML Report", reportTitles: "Test Raporu"])
