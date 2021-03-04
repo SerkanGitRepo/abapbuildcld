@@ -47,16 +47,3 @@ node {
 		sh 'docker rm -f $(docker ps -aq --filter "ancestor=selenium/hub")'
 	}
 }
-
-
-
-	
-
-//piperPipeline script: this
-//node() {
-//	stage('Acceptance') {
-//		seleniumExecuteTests (script: this) {
-//			git url: 'https://github.com/SerkanGitRepo/TestMavenPrj.git'
-//			sh '''mvn clean verify'''
-//		}
-//}
