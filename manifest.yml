@@ -2,7 +2,7 @@
 applications:
 
 - name: abapbuildcld
-  memory: 1024M
+  memory: 512M
   timeout: 300
   random-route: true
   path: application/target/abapbuildcld-application.war
