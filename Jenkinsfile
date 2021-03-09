@@ -13,15 +13,15 @@
 
 node {
 	
-	stage ('Build Project') {
-		git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
-		sh "mvn validate"
-	}
-	
-	stage ('Integration') {
-		git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
-		sh "mvn test"
-	}
+//	stage ('Build Project') {
+//		git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
+//		sh "mvn validate"
+//	}
+//	
+//	stage ('Integration') {
+//		git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
+//		sh "mvn test"
+//	}
 
 	stage('Init Test Environment'){
 		git url: 'https://github.com/SerkanGitRepo/CC_BDD_TNG.git'
@@ -47,15 +47,15 @@ node {
 		sh 'docker rm -f $(docker ps -aq --filter "ancestor=selenium/hub")'
 	}
 	
-	stage('Publis SAP CF'){
-		git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
-		pushToCloudFoundry (
-			cloudSpace: 'dev', 
-			credentialsId: 'CF_IDENTITY_FOR_JENKINS', 
-			organization: 'a004cb52trial', 
-			target: 'https://api.cf.eu10.hana.ondemand.com',
-			manifestChoice: [manifestFile: 'manifest.yml']
-			)
-	}
+//	stage('Publis SAP CF'){
+//		git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
+//		pushToCloudFoundry (
+//			cloudSpace: 'dev', 
+//			credentialsId: 'CF_IDENTITY_FOR_JENKINS', 
+//			organization: 'a004cb52trial', 
+//			target: 'https://api.cf.eu10.hana.ondemand.com',
+//			manifestChoice: [manifestFile: 'manifest.yml']
+//			)
+//	}
 	
 }
