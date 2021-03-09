@@ -41,11 +41,11 @@ node {
 ////		sh 'docker rm $(docker ps -aq --filter "network=host")'
 //	}
 
-	stage('Terminate Docker Source'){
-		sh 'docker rm -f $(docker ps -aq --filter "ancestor=selenium/node-chrome-debug")'
-		sh 'docker rm -f $(docker ps -aq --filter "ancestor=selenium/node-firefox-debug")'
-		sh 'docker rm -f $(docker ps -aq --filter "ancestor=selenium/hub")'
-	}
+//	stage('Terminate Docker Source'){
+//		sh 'docker rm -f $(docker ps -aq --filter "ancestor=selenium/node-chrome-debug")'
+//		sh 'docker rm -f $(docker ps -aq --filter "ancestor=selenium/node-firefox-debug")'
+//		sh 'docker rm -f $(docker ps -aq --filter "ancestor=selenium/hub")'
+//	}
 	
 //	stage('Publis SAP CF'){
 //		git url: 'https://github.com/SerkanGitRepo/abapbuildcld'
