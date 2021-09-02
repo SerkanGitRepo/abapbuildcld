@@ -25,7 +25,7 @@ node {
 
 	stage('Init Test Environment'){
 		git url: 'https://github.com/SerkanGitRepo/CC_BDD_TNG.git'
-		sh 'docker-compose -f docker-compose.yml up -d'
+		sh '../docker-compose -f docker-compose.yml up -d'
 	}
 	
 	stage('Build Test Image'){
