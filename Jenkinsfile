@@ -23,10 +23,10 @@ node {
 		sh "mvn test"
 	}
 
-//	stage('Init Test Environment'){
-//		git url: 'https://github.com/SerkanGitRepo/CC_BDD_TNG.git'
-//		sh '/var/jenkins_home/docker-compose -f docker-compose.yml up -d'
-//	}
+	stage('Init Test Environment'){
+		git url: 'https://github.com/SerkanGitRepo/CC_BDD_TNG.git'
+		sh '/var/jenkins_home/docker-compose -f docker-compose.yml up -d'
+	}
 	
 	stage('Build Test Image'){
 		git url: 'https://github.com/SerkanGitRepo/CC_BDD_TNG.git'
