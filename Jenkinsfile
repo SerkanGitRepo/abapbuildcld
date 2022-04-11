@@ -15,9 +15,9 @@ node {
 
 	stage ('Version Control'){
       script {
-            final String url = 'https://sso.zorlu.com.tr/v2/manifest.json'
+            final String url = "https://sso.zorlu.com.tr/v2/manifest.json"
 
-            final String response = sh(script: 'curl -s $url', returnStdout: true).trim()
+            final String response = sh(script: "curl -s $url", returnStdout: true).trim()
 
             echo response
         }
